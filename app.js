@@ -15,9 +15,10 @@ app.use(cookieParser());
 app.use("/uploads", express.static(__dirname+"/uploads")); // For getting images that are downloaded by link
 
 app.use(cors({
-    credentials:true,
-    origin:process.env.CLIENT_BASE_URL
+    credentials: true,
+    origin: [ process.env.CLIENT_BASE_URL ],
 }));
+
 
 
 const userAuthRoutes = require("./routes/userAuthRoutes");
